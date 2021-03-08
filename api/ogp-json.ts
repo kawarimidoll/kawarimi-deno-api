@@ -35,7 +35,7 @@ export default async (req: ServerRequest) => {
     "Cache-Control": `public, max-age=${CACHE_MAX_AGE}`,
   });
   const apiKey = req.headers.get("X-API-KEY");
-  if (apiKey !== Deno.env.get("X-API-KEY")) {
+  if (apiKey !== Deno.env.get("X_API_KEY")) {
     req.respond({ status: 401, headers, body: '{"error": "not allowed"}' });
     return;
   }
