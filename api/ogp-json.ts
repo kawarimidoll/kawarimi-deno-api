@@ -1,6 +1,6 @@
 // [JavaScriptでURLからOGP取得する - Qiita](https://qiita.com/ksyunnnn/items/bfe2b9c568e97bb6b494)
-import { DOMParser, ServerRequest } from "./deps.ts";
-import { parseParams } from "./utils.ts";
+import { DOMParser, ServerRequest } from "../src/deps.ts";
+import { parseParams } from "../src/utils.ts";
 import "https://deno.land/x/dotenv@v2.0.0/load.ts";
 
 // cache two hours
