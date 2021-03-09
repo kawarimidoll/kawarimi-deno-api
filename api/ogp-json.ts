@@ -31,6 +31,7 @@ const ogpJson = (url: string) =>
 
 export default async (req: ServerRequest) => {
   const headers = new Headers({
+    "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/json",
     "Cache-Control": `public, max-age=${CACHE_MAX_AGE}`,
   });
