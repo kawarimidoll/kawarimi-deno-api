@@ -30,8 +30,10 @@ const ogpJson = (url: string) =>
     .catch((error) => ({ error }));
 
 export default async (req: ServerRequest) => {
+  // [How can I enable CORS on Vercel? - Vercel Support Article](https://vercel.com/support/articles/how-to-enable-cors)
   const headers = new Headers({
     "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET",
     "Content-Type": "application/json",
     "Cache-Control": `public, max-age=${CACHE_MAX_AGE}`,
   });
@@ -52,5 +54,5 @@ export default async (req: ServerRequest) => {
     return;
   }
   const json = await ogpJson(url);
-  req.respond({ status: 401, headers, body: JSON.stringify(json) });
+  req.respond({ status: 200, headers, body: JSON.stringify(json) });
 };
