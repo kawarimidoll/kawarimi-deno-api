@@ -37,7 +37,7 @@ export default async (req: ServerRequest) => {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
       "Access-Control-Allow-Headers":
-        "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+        "X-API-KEY, Content-Length, Content-MD5, Content-Type, Date",
     });
     req.respond({ status: 200, headers });
     return;
